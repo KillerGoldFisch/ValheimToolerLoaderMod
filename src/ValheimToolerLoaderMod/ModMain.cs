@@ -17,21 +17,18 @@ namespace ValheimToolerLoaderMod
     {
         public const string PluginId = "KillerGoldFisch.ValheimToolerLoaderMod";
 
-        private Harmony _harmony;
-        private ModConfig _modConfig;
+        //private Harmony _harmony;
 
         #region EntrPoints
         private void Awake()
         {
-            _modConfig = new ModConfig(this);
-            _harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PluginId);
-
+            //_harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PluginId);
             CallLoaderInit();
         }
 
         private void OnDestroy() {
             CallLoaderUnload();
-            _harmony?.UnpatchAll(PluginId);
+            //_harmony?.UnpatchAll(PluginId);
         }
         #endregion
 
