@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 using BepInEx;
-using HarmonyLib;
-using UnityEngine;
 
 namespace ValheimToolerLoaderMod
 {
@@ -17,18 +11,14 @@ namespace ValheimToolerLoaderMod
     {
         public const string PluginId = "KillerGoldFisch.ValheimToolerLoaderMod";
 
-        //private Harmony _harmony;
-
         #region EntrPoints
         private void Awake()
         {
-            //_harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PluginId);
             CallLoaderInit();
         }
 
         private void OnDestroy() {
             CallLoaderUnload();
-            //_harmony?.UnpatchAll(PluginId);
         }
         #endregion
 
